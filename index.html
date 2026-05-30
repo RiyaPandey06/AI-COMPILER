@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI Application Generation Compiler</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Compiler pipeline</p>
+            <h1>AI Application Generation Compiler</h1>
+          </div>
+          <button id="runEval" class="icon-button" title="Run the built-in evaluation dataset">
+            <span aria-hidden="true">↻</span>
+            Evaluate
+          </button>
+        </header>
+
+        <section class="prompt-panel">
+          <label for="promptInput">Product requirement</label>
+          <textarea id="promptInput" spellcheck="true">Build a CRM with login, contacts, dashboard, role-based access, and premium plan with payments. Admins can see analytics.</textarea>
+          <div class="prompt-actions">
+            <select id="exampleSelect" aria-label="Example prompt"></select>
+            <button id="compileButton">Compile</button>
+          </div>
+        </section>
+
+        <section class="stage-grid" id="stageGrid" aria-label="Compiler stages"></section>
+
+        <section class="output-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <h2>Validation and Repair</h2>
+              <span id="statusPill" class="pill">Ready</span>
+            </div>
+            <div id="validationLog" class="log"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <h2>Executable Configuration</h2>
+              <button id="copyJson" class="ghost-button">Copy JSON</button>
+            </div>
+            <pre id="jsonOutput" class="json"></pre>
+          </article>
+        </section>
+      </section>
+
+      <aside class="runtime">
+        <div class="panel-head">
+          <div>
+            <p class="eyebrow">Runtime renderer</p>
+            <h2 id="runtimeTitle">Generated App</h2>
+          </div>
+          <span id="runtimeHealth" class="pill">Executable</span>
+        </div>
+        <div id="runtimePreview" class="preview"></div>
+        <div class="metrics" id="metrics"></div>
+      </aside>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
